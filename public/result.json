@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "name": "gas",
+      "result": 5550
+    },
+    {
+      "name": "fule",
+      "result": 5550
+    },
+    {
+      "name": "stationary fule combustion",
+      "result": 5550
+    },
+    {
+      "name": "mobile fule combustion",
+      "result": 5550
+    },
+    { "name": "total", "result": 5000 }
+  ]
+}

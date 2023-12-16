@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --maincolor: #0c7075;
+  --secolor: #072e33;
+  --dark: #294d61;
+  --backcolor: #05161a;
+  --light: #6da5c0;
+  --cyan: #0f969c;
+}
+
+body {
+  background: #141414;
+  /* background: url(../../public/pg.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::selection {
+  color: white;
+  background-color: var(--maincolor);
+}
+/* theme */
+.light {
+  background: #fff;
+  color: #141414;
+}
+.theme {
+  transition:1s all ease;
+}
+.dark {
+  background: #141414;
+  color: #fff;
+}
+.darkicon {
+  border-radius: 30px;
+  border: 1.5px solid var(--cyan);
+  width: 42px;
+  height: 24px;
+  padding: 2px;
+}
+.ball {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--cyan);
+}
+.darktext {
+  font-size: 12px;
+}
+/* theme */
+
+.btn {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--maincolor);
+  border-radius: 15px;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  background-color: var(--secolor);
+  transform: scale(1.1);
+}
+.gradient {
+  background: linear-gradient(
+    45deg,
+    var(--secolor),
+    var(--dark),
+    var(--maincolor),
+    var(--cyan),
+    var(--light)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 400%;
+  animation: move 10s linear alternate infinite;
+}
+.stroke {
+  -webkit-text-stroke: 1px white;
+}
+.slide::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--maincolor);
+  white-space: nowrap;
+  width: 0;
+  overflow: hidden;
+}
+.slide:hover::after {
+  animation: moveText 0.5s linear both;
+}
+.s1::after {
+  content: "Calculate";
+}
+.s2::after {
+  content: "Aim";
+}
+.s3::after {
+  content: "Reduce";
+}
+.s4::after {
+  content: "Offset";
+}
+.s5::after {
+  content: "Communicate";
+}
+.s6::after {
+  content: "Comply";
+  height: 100px;
+}
+@keyframes moveText {
+  to {
+    width: 100%;
+  }
+}
+
+.burger-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+.burger-icon::before,
+.burger-icon::after,
+.burger-icon span {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--maincolor);
+  transition: transform 0.2s ease-out;
+}
+.burger-icon::before {
+  transform: translatey(8px);
+}
+
+.burger-icon::after {
+  transform: translatey(16px);
+}
+.burger-icon.active::before {
+  transform: translateY(9px) rotate(45deg);
+  background-color: white;
+}
+
+.burger-icon.active::after {
+  transform: translateY(9px) rotate(-45deg);
+  background-color: white;
+}
+
+.burger-icon.active span {
+  transform: scale(0);
+}
+
+@keyframes slide {
+  0% {
+    position: 0;
+  }
+  100% {
+  }
+}
